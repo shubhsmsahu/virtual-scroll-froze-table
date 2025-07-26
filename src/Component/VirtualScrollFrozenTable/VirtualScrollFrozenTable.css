@@ -1,0 +1,63 @@
+.table-container {
+    width: 100%;
+    height: 500px; /* or whatever you need */
+    overflow: hidden;
+    background: #fafbfc;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+  }
+  
+  /* Main grid wrapper */
+  .main-grid {
+    overflow: hidden;
+  }
+  
+  /* Normal data cell */
+  .cell {
+    box-sizing: border-box;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #f2f2f2;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+  
+  /* Header cell (rowIndex = 0) */
+  .header-cell {
+    box-sizing: border-box;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d2d4db;
+    border-right: 1px solid #d2d4db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: #e6e7ea;
+  }
+  
+  /* Frozen columns styling */
+  .frozen-block {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none; /* let main-grid handle scrollbars */
+    z-index: 2; 
+  }
+  
+  /* Visually distinguish frozen cells */
+  .frozen-left    .cell,
+  .frozen-right   .cell,
+  .frozen-left    .header-cell,
+  .frozen-right   .header-cell {
+    background: #f5f7fa !important;
+  }
+  
+  /* Align frozen header/data */
+  .frozen-left    { left: 0; }
+  .frozen-right   { right: 0; }
+  
